@@ -7,7 +7,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-playfair), ui-serif, Georgia, "Times New Roman",
     serif;
   --font-heading: var(--font-sans);
@@ -127,5 +127,15 @@
   }
   html {
     @apply font-sans;
+  }
+}
+
+/* Infinite horizontal strip for `ImageAutoSlider` (scoped — no global html/body overrides). */
+@keyframes wedding-image-slider-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }

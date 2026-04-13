@@ -12,8 +12,9 @@ export function IntroText() {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <p className="font-serif text-base leading-[1.5] text-[#5C5853]">
-        We&apos;re so excited to celebrate with you. Please leave your details
-        so we can send your official invitation.
+        We&apos;re getting married on the 12th of December 2026 and we&apos;re
+        so excited to celebrate with you. Please leave your details so we can
+        send your official invitation.
       </p>
     </motion.section>
   );

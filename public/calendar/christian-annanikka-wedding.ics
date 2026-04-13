@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Christian & Annanikka//Save the Date//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:save-the-date-christian-annanikka-20261212@save-the-date.local
+DTSTAMP:20260412T120000Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261213
+SUMMARY:Christian & Annanikka's Wedding ❤️
+LOCATION:TBD
+DESCRIPTION:Save the date — formal invitation to follow.
+END:VEVENT
+END:VCALENDAR

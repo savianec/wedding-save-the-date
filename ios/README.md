@@ -15,6 +15,14 @@ This folder contains SwiftUI source that mirrors the web experience: hero, intro
 4. Open `WeddingConfig.swift` and set `supabaseURL` and `supabaseAnonKey` to your project’s URL and anon key (same values as the web `.env.local`).
 5. Build and run on a simulator or device.
 
+## Calendar file (`event.ics`)
+
+Include **`event.ics`** in the app target (**Build Phases → Copy Bundle Resources**) so the “Save the date in my calendar” control can share the file after RSVP. It matches the web file at `/calendar/christian-annanikka-wedding.ics` (12 December 2026, all day).
+
+## Photos
+
+The same eight engagement photos used on the web are copied into `ReferenceImages/` as `01-vineyard.png` … `08-aisle.png`. Add them to an **Asset Catalog** in Xcode (e.g. `Assets.xcassets`) if you want parity with the site.
+
 ## Files
 
 | File | Purpose |

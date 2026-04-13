@@ -1,9 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Playfair_Display, Geist } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const inter = Inter({
   variable: "--font-inter",
@@ -19,11 +17,11 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Christian & Annanikka — Save the Date",
+  title: "Christian & Annanikka's Wedding — Save the Date",
   description:
     "12 December 2026 — Save the date. Share your details for your official invitation.",
   openGraph: {
-    title: "Christian & Annanikka — Save the Date",
+    title: "Christian & Annanikka's Wedding — Save the Date",
     description: "12.12.2026 — We can’t wait to celebrate with you.",
     type: "website",
   },
@@ -43,7 +41,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full", "scroll-smooth", "antialiased", inter.variable, playfair.variable, "font-sans", geist.variable)}
+      className={cn(
+        "h-full scroll-smooth antialiased",
+        inter.variable,
+        playfair.variable,
+        "font-sans",
+      )}
     >
       <body className="min-h-full bg-[#FAF7F2] font-sans text-[#2F2C28]">
         {children}

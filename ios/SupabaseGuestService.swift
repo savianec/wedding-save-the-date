@@ -4,7 +4,6 @@ struct GuestPayload: Encodable {
     let name: String
     let address: String
     let phone: String?
-    let plus_one: Bool?
 }
 
 enum GuestSubmissionError: LocalizedError {

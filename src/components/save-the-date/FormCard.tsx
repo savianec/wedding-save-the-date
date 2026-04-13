@@ -11,7 +11,6 @@ export function FormCard() {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
-  const [plusOne, setPlusOne] = useState<"" | "yes" | "no">("");
   const [errors, setErrors] = useState<FieldErrors>({});
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -44,8 +43,6 @@ export function FormCard() {
       address: address.trim(),
     };
     if (phone.trim()) row.phone = phone.trim();
-    if (plusOne === "yes") row.plus_one = true;
-    if (plusOne === "no") row.plus_one = false;
 
     const { error } = await supabase.from("guests").insert(row);
 
@@ -59,7 +56,8 @@ export function FormCard() {
 
   return (
     <motion.section
-      className="mx-auto w-full max-w-[480px] px-4 pb-12"
+      id="rsvp"
+      className="mx-auto w-full max-w-[480px] px-4 pb-12 scroll-mt-8"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
@@ -167,37 +165,6 @@ export function FormCard() {
                   className="min-h-[52px] rounded-xl border border-[#E5E2DC] bg-white px-[14px] py-3 text-base text-[#2F2C28] outline-none transition-[box-shadow,border-color] placeholder:text-[#9A9590] focus:border-[#A8B5A2] focus:shadow-[0_0_0_3px_rgba(168,181,162,0.25)]"
                 />
               </div>
-
-              <fieldset className="flex flex-col gap-2 border-0 p-0">
-                <legend className="mb-1 text-left text-sm font-medium text-[#2F2C28]">
-                  Plus one{" "}
-                  <span className="font-normal text-[#6F6B66]">(optional)</span>
-                </legend>
-                <div className="flex gap-6">
-                  <label className="flex cursor-pointer items-center gap-2 text-[#2F2C28]">
-                    <input
-                      type="radio"
-                      name="plus_one"
-                      value="yes"
-                      checked={plusOne === "yes"}
-                      onChange={() => setPlusOne("yes")}
-                      className="h-[18px] w-[18px] accent-[#A8B5A2]"
-                    />
-                    <span className="text-base">Yes</span>
-                  </label>
-                  <label className="flex cursor-pointer items-center gap-2 text-[#2F2C28]">
-                    <input
-                      type="radio"
-                      name="plus_one"
-                      value="no"
-                      checked={plusOne === "no"}
-                      onChange={() => setPlusOne("no")}
-                      className="h-[18px] w-[18px] accent-[#A8B5A2]"
-                    />
-                    <span className="text-base">No</span>
-                  </label>
-                </div>
-              </fieldset>
 
               {formError ? (
                 <p className="rounded-xl bg-red-50 px-3 py-2 text-left text-sm text-red-800">
