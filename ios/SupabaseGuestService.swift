@@ -13,7 +13,7 @@ enum GuestSubmissionError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .invalidConfiguration:
-            return "Supabase URL or key is not configured."
+            return "Supabase URL or key is not configured. Set them in WeddingConfig.swift (same values as NEXT_PUBLIC_SUPABASE_* in the web app)."
         case .server(let code, let body):
             if let body, !body.isEmpty { return "Server error (\(code)): \(body)" }
             return "Server error (\(code))."

@@ -32,7 +32,7 @@ export function FormCard() {
     const supabase = createBrowserSupabaseClient();
     if (!supabase) {
       setFormError(
-        "This page is not connected to the database yet. Add your Supabase keys in .env.local.",
+        "Supabase is not configured for this deployment. Add NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY: use .env.local locally, or Vercel → Project → Settings → Environment Variables for production, then redeploy.",
       );
       return;
     }
